@@ -20,6 +20,10 @@ router.use(
   }),
 );
 
+router.get('/hello', (ctx) => {
+  ctx.body = 'Hello World vole!';
+})
+
 router.use((ctx, next) => {
   const hmacHeader = ctx.headers["x-smartsupp-hmac"];
   const bodyHeader = ctx.headers["x-debug-body"];
@@ -41,6 +45,7 @@ router.post("/webhook", (ctx) => {
   if (typeof raw !== "string") ctx.throw(400, "Missing raw body");
   ctx.body = { hex: Buffer.from(raw, "utf8").toString("hex") };
 });
+
 
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(3000, () => console.log("Listening on http://localhost:3000"));
