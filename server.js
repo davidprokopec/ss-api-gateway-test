@@ -6,7 +6,7 @@ import { createHmac } from "crypto";
 const koaBody = koaBodyImport.default || koaBodyImport;
 
 const UNPARSED_BODY = Symbol.for("unparsedBody");
-const secret = "73bd142f38e22f75b647dae91ed018d435d697cd";
+const secret = "1cc41027be86568febfe0121304a5e87f5e055ee";
 const app = new Koa();
 const router = new Router();
 
